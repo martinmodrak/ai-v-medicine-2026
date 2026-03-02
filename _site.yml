@@ -1,0 +1,11 @@
+name: "ai-in-medicine-2025"
+navbar:
+  title: "Introduction to AI in medicine - 2025 course"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Final tasks"
+      href: images_simple_ml-tasks.html
+output_dir: docs
+include: ["*.html", "*.png"]
+exclude: ["R", "*.R", "*.Rmd", "DESCRIPTION", "NAMESPACE", "renv.lock", "LICENSE", "tests"]
