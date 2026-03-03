@@ -1,11 +1,9 @@
-name: "ai-in-medicine-2025"
+name: "ai-v-medicine-2026"
 navbar:
-  title: "Introduction to AI in medicine - 2025 course"
+  title: "Úvod do umělé inteligence v medicíně (2026)"
   left:
     - text: "Home"
       href: index.html
-    - text: "Final tasks"
-      href: images_simple_ml-tasks.html
 output_dir: docs
 include: ["*.html", "*.png"]
 exclude: ["R", "*.R", "*.Rmd", "DESCRIPTION", "NAMESPACE", "renv.lock", "LICENSE", "tests"]

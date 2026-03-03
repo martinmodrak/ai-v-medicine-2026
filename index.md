@@ -5,7 +5,7 @@ output: html_document
 
 Materiály pro letní semestr 2025/26. Z historických důvodů je část materiálů psána anglicky.
 
-Požadavky na kurz:
+Požadavky na zápočet:
 
 - Aktivní účast na aspoň 5ti lekcích z 8. Co znamená "aktivní"?
   - Přijít na hodinu a zapájet se do úkolů a diskuzí
@@ -14,8 +14,15 @@ Požadavky na kurz:
      - Otázku/nejasnost/námět k diskuzi o materiálu NEBO
      - Odpovědět na otázku někoho jiného, již v dokumentu přítomnou
 
+Plán lekcí (přibližný, může se ještě změnit)
 
-- Lekce 1 - Historie a principy AI: [osnova](history.html), [úkoly](history-tasks.html)
-- Lekce 2 - Jednoduché metody zpracování obrazu, digitální patologie
+- Lekce 1 - Historie a principy AI: [osnova](history.html)
+- Lekce 2 - Jednoduché metody zpracování obrazu, digitální patologie, jednoduché strojové učení v digitální patologii
+- Lekce 3 - Neuronové sítě - principy
+- Lekce 4 - Neurovnoé sítě v medicínské analýze obrazu
+- Lekce 5 - Z čeho se skládá ChatGPT
+- Lekce 6 - Velké jazykové modely - základní principy a omezení
+- Lekce 7 - Velké jazykové modely - co všechno je bulšit
+- Lekce 8 - Velké jazykové modely - použití ve vědě a výuce
 
 
