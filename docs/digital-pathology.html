@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 1 - Task materials</title>
+<title>Digital pathology</title>
 
 <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -260,48 +260,57 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 1 - Task materials</h1>
+<h1 class="title toc-ignore">Digital pathology</h1>
 
 </div>
 
 
-<div id="perceptron" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Perceptron</h1>
-<!-- Next time, try https://ml-playground.com/# Also avoid red vs. green -->
-<p>The link at <a href="https://codepen.io/bagrounds/full/wdqypY"
-class="uri">https://codepen.io/bagrounds/full/wdqypY</a> has a nice demo
-showing a <a
-href="https://en.wikipedia.org/wiki/Perceptron">perceptron</a> with two
-inputs and step <a
-href="https://en.wikipedia.org/wiki/Activation_function">activation
-function</a>.</p>
 <ul>
-<li>For each case below, try to roughly recreate the image in the
-training data for the perceptron.
+<li>Thanks to MUDr. Miroslav Koblížek from the Department of Pathology
+and Molecular Medicine for consulting.
 <ul>
-<li>Remember to mix classes! (i.e. switch between “c1” and “c2” in the
-top left after few data points)</li>
+<li>All errors remain my own.</li>
 </ul></li>
-<li>Keep adding points until roughly learning rate = 0.1</li>
+<li>Get to downloading - <a href="digital-pathology-tasks.html">Task
+materials</a> (may take a while)</li>
+<li><strong>Part 1:</strong> Simple image analysis
+<ul>
+<li>Reading material: Watershed algorithm: <a
+href="https://vincmazet.github.io/bip/segmentation/watershed.html"
+class="uri">https://vincmazet.github.io/bip/segmentation/watershed.html</a></li>
+<li>Somewhat borderline whether Watershed and similar methods are
+“AI”</li>
+<li>Specific useful algorithms</li>
+<li>Let’s get to first batch of <a
+href="digital-pathology-tasks.html">tasks</a></li>
+</ul></li>
+<li><strong>Part 2:</strong> Simple machine learning
+<ul>
+<li>Fitting and overfitting
+<ul>
+<li>Krátké video: <a href="https://www.youtube.com/watch?v=o3DztvnfAJg"
+class="uri">https://www.youtube.com/watch?v=o3DztvnfAJg</a></li>
+<li>Cross-validace: <a
+href="https://www.justinmath.com/overfitting-underfitting-cross-validation-and-the-bias-variance-tradeoff/"
+class="uri">https://www.justinmath.com/overfitting-underfitting-cross-validation-and-the-bias-variance-tradeoff/</a>
+(zde není nutné proniknout do matematických formulí ani nic sami
+spočítat)</li>
+</ul></li>
+<li>Show cell features in QuPath</li>
+<li>How does a human classify? <a
+href="https://en.wikipedia.org/wiki/Decision_tree">Decision trees</a>
+<!-- Cell-specific example: https://www.researchgate.net/figure/Best-decision-tree-for-the-classification-of-cells-as-positive-or-negative-for-IL-2_fig4_223966551 --></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Bootstrap_aggregating">Bagging</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Random_forest">Random
+forests</a>
+<ul>
+<li>Feature bagging</li>
+</ul></li>
+<li>Training a classifier in QuPath (see tasks)</li>
+</ul></li>
+<li>Cleanup your files!</li>
 </ul>
-<div id="easy-target" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Easy target</h2>
-<p><img src="history-tasks_files/figure-html/unnamed-chunk-1-1.png" alt="" width="672" /></p>
-</div>
-<div id="soft-target" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Soft target</h2>
-<p><img src="history-tasks_files/figure-html/unnamed-chunk-2-1.png" alt="" width="672" /></p>
-</div>
-<div id="hard-target" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Hard target</h2>
-<p><img src="history-tasks_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" /></p>
-</div>
-</div>
-<div id="fool-a-classifier" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Fool a classifier</h1>
-<p><a href="https://people.ischool.berkeley.edu/~nick/aaronson-oracle/"
-class="uri">https://people.ischool.berkeley.edu/~nick/aaronson-oracle/</a></p>
-</div>
 
 
 

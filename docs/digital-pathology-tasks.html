@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Digital pathology - Task materials</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Úvod do umělé inteligence v medicíně (2026)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="digital-pathology-tasks.html">Úlohy - Lekce 2</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Digital pathology - Task materials</h1>
+
+</div>
+
+
+<div id="download-data-for-lesson" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Download data for
+lesson</h1>
+<ul>
+<li>Download everything from <a href="http://195.113.43.46:3388/"
+class="uri">http://195.113.43.46:3388/</a>
+<ul>
+<li>File sources (for access from outside):
+<ul>
+<li>QuPath: for Windows: <a
+href="https://github.com/qupath/qupath/releases/download/v0.6.0/QuPath-v0.6.0-Windows.zip"
+class="uri">https://github.com/qupath/qupath/releases/download/v0.6.0/QuPath-v0.6.0-Windows.zip</a>
+<ul>
+<li>For other systems see <a
+href="https://github.com/qupath/qupath/releases/tag/v0.6.0"
+class="uri">https://github.com/qupath/qupath/releases/tag/v0.6.0</a></li>
+<li>New version 0.7.0 was released two weeks ago, but I haven’t tested
+the material there</li>
+</ul></li>
+<li>Ki67 Slide: <a
+href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi"
+class="uri">https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi</a></li>
+<li>Lung cancer samples stained for MAGEA4 <a
+href="https://www.ebi.ac.uk/biostudies/files/S-BIAD453/MAGEA4/MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs"
+class="uri">https://www.ebi.ac.uk/biostudies/files/S-BIAD453/MAGEA4/MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</a></li>
+</ul></li>
+</ul></li>
+<li>Save to a temporary folder (e.g. on Desktop)</li>
+</ul>
+</div>
+<div id="unpack-and-run-qupath" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Unpack and run
+QuPath</h1>
+<ul>
+<li>If asked to create a user directory, allow it (with default
+settings)</li>
+</ul>
+</div>
+<div id="analyzing-first-ki-67-image" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Analyzing first Ki-67
+image</h1>
+<p>Will be done together with everybody</p>
+<p>We are mostly following the tutorial at: <a
+href="https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_detection.html"
+class="uri">https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_detection.html</a></p>
+<ul>
+<li>Open file “OS-2.tif” in QuPath
+<ul>
+<li>File -&gt; Open, choose the file</li>
+<li>Under “Set image type” Select “Brightfield H-DAB”</li>
+</ul></li>
+<li>Check Image (left pane) -&gt; Pixel width
+<ul>
+<li>Should be 0.2271μm (both width and height)</li>
+</ul></li>
+<li>View -&gt; Brightness + Contrast
+<ul>
+<li>Inspect channels/stains</li>
+<li>We’ll now work with the full image (“Original”)</li>
+</ul></li>
+<li>Draw a small-ish rectangle (“R” key or the rectangle icon on the
+main toolbar) - we want ~100-1000 cells in it</li>
+<li>Analyze -&gt; Cell detection -&gt; Positive cell detection
+<ul>
+<li>Run with default settings</li>
+<li>Use the ‘D’ key to show/hide annotations</li>
+<li>Re-run positive cell detection with “Detection image” = “Optical
+Density sum”
+<ul>
+<li>Note that this makes the stained cells quite “jagged” - let’s look
+at just the Hematoxylin channel to see why.</li>
+</ul></li>
+<li>Note: when deleting annotations, you want to choose “No” when asked
+if to “Keep descendant objects”</li>
+</ul></li>
+<li>Tuning other parameters
+<ul>
+<li>Sigma / Median filter radius (high values make everything
+smoother)</li>
+<li>Background radius (larger = allow larger nuclei)</li>
+<li>Cell expansion (how much space around nucleus is considered part of
+the cell)</li>
+<li>Threshold 1 (how much DAB stain is required to classify as
+positive)</li>
+</ul></li>
+<li>Once we are happy with detection settings, analyze a larger region
+(should be the “hotspot” of the cancer)
+<ul>
+<li>Note: when deleting annotations (rectangles), you will be asked if
+you want to “Keep descendant objects”, you want to say “No” (so that
+annotated cells are deleted with rectangles)</li>
+</ul></li>
+<li>You can see the percent positive in the left pane, Annotations,
+bottom part</li>
+</ul>
+</div>
+<div id="analyze-a-ki-67-image-on-your-own" class="section level1"
+number="4">
+<h1><span class="header-section-number">4</span> Analyze a Ki-67 image
+on your own</h1>
+<ul>
+<li>Try the same set of steps for one of the samples/patches in the file
+<code>MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</code></li>
+</ul>
+</div>
+<div id="bonus-test-the-instanseg-automatic-segmenter-on-ki-67"
+class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Bonus: Test the
+InstanSeg automatic segmenter on Ki-67</h1>
+<ul>
+<li>InstanSeg is described at <a href="https://arxiv.org/pdf/2408.15954"
+class="uri">https://arxiv.org/pdf/2408.15954</a></li>
+<li>Install InstanSeg
+<ul>
+<li>Open “Extensions -&gt; Manage Extensions”
+<ul>
+<li>Find “QuPath InstanSeg extension v0.1.6”, click the green plus sign
+to install</li>
+</ul></li>
+<li>Open “Extensions -&gt; Deep Java Library -&gt; Manage DJL Engines”
+<ul>
+<li>Under “PyToch”, click “Check/Download”, once downloaded close the
+window</li>
+</ul></li>
+<li>You should now see “InstanSeg” under “Extensions”
+<ul>
+<li>If you don’t, then restart QuPath (save your changes)</li>
+</ul></li>
+</ul></li>
+<li>Try InstanSeg
+<ul>
+<li>Make a new rrectangle annotation overlapping your previous
+detections and select it</li>
+<li>Open “Extensions -&gt; InstanSeg -&gt; Run InstanSeg”
+<ul>
+<li>Allow checking for updates</li>
+<li>Click the directory icon near “Choose directory to store models”.
+<ul>
+<li>Choose the directory where you have your other data</li>
+</ul></li>
+<li>Select “brightfield-nuclei” under “Select a model”</li>
+<li>Make sure you have the correct rectangle selected (in yellow
+color)</li>
+<li>Click “Run”</li>
+</ul></li>
+<li>Compare the annotations to the nuclei annotations made manually
+<ul>
+<li>In the left pane, under “Annotations” and “Class list” you can hide
+some annotations — by default the new annotations from InstanSeg will be
+marked as “None” while the annotations done manually are classified as
+“Positive” or “Negative”
+<ul>
+<li>Note that the default InstanSeg model only selects nuclei.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Classify InstanSeg cells as Ki-67 positive
+<ul>
+<li>Delete manually annotated rectangles+</li>
+<li>Choose “Classify -&gt; Object Classification -&gt; Set Cell
+Intensity Classification”</li>
+<li>Select “DAB: Mean” as the “Measurement”, pick a suitable
+threshold.</li>
+</ul></li>
+</ul>
+</div>
+<div id="wait-for-second-part-of-the-lesson" class="section level1"
+number="6">
+<h1><span class="header-section-number">6</span> Wait for second part of
+the lesson</h1>
+</div>
+<div id="train-a-classifier-together" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Train a classifier
+together</h1>
+<p>Following <a
+href="https://qupath.readthedocs.io/en/0.6/docs/tutorials/cell_classification.html"
+class="uri">https://qupath.readthedocs.io/en/0.6/docs/tutorials/cell_classification.html</a></p>
+<ul>
+<li>Open “OS-2.tif” in QuPath
+<ul>
+<li>File -&gt; Open, choose the file</li>
+<li>Under “Set image type” Select “Brightfield H-DAB”</li>
+</ul></li>
+<li>Detect cells in some relatively big area in the center
+<ul>
+<li>This is the same as we did previously, but we will use “Cell
+detection” instead of “Positive cell detection”. “Cell detection” alone
+is enough (using “Poistive cell detection” will also work, but will be a
+bit more messy to work look at).</li>
+</ul></li>
+<li>Manually inspect cell information
+<ul>
+<li>Measure -&gt; show measurements maps
+<ul>
+<li>Nucleus/cell area ratio (There’s a filter for name)</li>
+<li>Lower the maximum value (lower slider) to better highlight</li>
+<li>Cancer cells typically have high values!</li>
+</ul></li>
+<li>But those measurements itself are not enough</li>
+</ul></li>
+<li>Add information about neighbourhood
+<ul>
+<li>Analyze -&gt; Calculate features -&gt; Add smoothed features (keep
+the default 25μm radius)</li>
+</ul></li>
+<li>Annotate regions as tumor/stroma
+<ul>
+<li>Annotate regions only where we already have cells annotated</li>
+<li>The Brush tool <img
+src="https://qupath.readthedocs.io/en/0.5/_images/BRUSH_TOOL.png"
+alt="brush tool" /> is probably the best</li>
+<li>Right-click region -&gt; Set classification -&gt; Tumour OR
+Stroma</li>
+</ul></li>
+<li>Classify -&gt; Object classification -&gt; Train object classifier
+<ul>
+<li>Live update</li>
+<li>If you see incorrect classifications, add annotations to improve
+training</li>
+</ul></li>
+<li>Optional: classify tumor cells as positive/negative
+<ul>
+<li>Classify ‣ Object classification ‣ Set cell intensity
+classifications.</li>
+<li>Choose “DAB OD mean” for “Measurement”</li>
+</ul></li>
+</ul>
+</div>
+<div id="train-a-classifier-yourself" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Train a classifier
+yourself</h1>
+<p>Evaluating the presence of cancer-testis antigens in multiple tissue
+samples. The original study is at <a
+href="https://europepmc.org/article/MED/37341056#mol213474-sec-0007"
+class="uri">https://europepmc.org/article/MED/37341056#mol213474-sec-0007</a>
+(for interest only, not needed for the task)</p>
+<ul>
+<li><p>Import file
+<code>MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</code> into the QuPath
+project (drag onto the window or File -&gt; Open).</p></li>
+<li><p>There are many samples in the same file, we will focus on the
+top-left cores (the first 4 in the first row).</p></li>
+<li><p>Run cell detection for a couple areas. The default settings will
+tend to detect too many cells due to the relatively low resolution of
+the image. You will want to increase smoothing via “Median filter
+radius” and “Sigma” options. You may also need to change the “Background
+radius” setting to allow for larger cells.</p></li>
+<li><p>Once you are happy with the result, store (e.g. screenshot, or
+just write down) your final cell detection parameters!</p></li>
+<li><p>Train a classifier to distinguish between the two cell
+populations shown below - you can use Tumor/Stroma classes (or add your
+own in the Annotations card in the left pane and the “…” button below
+the class list).</p></li>
+</ul>
+<p><img src="populations-final-task.png" /></p>
+<ul>
+<li>Once the classifier works good on one sample, detect cells at
+another sample (with the same detection method and settings!)
+<ul>
+<li>If you used “Analyze -&gt; Calculate features -&gt; Add smooth
+features” previously, you need to rerun it for the new region</li>
+<li>Does it work well also here?</li>
+<li>If not, add annotations on the new sample</li>
+<li>Once it works nice on both sample, try on yet another samples.
+<ul>
+<li>This is kind of cross validation</li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- 
+Note to self: evaluate on 
+Slide 1: 
+   - Top 4, Left - 2
+   - Bottom - 3, LEft-
+Slide 2:
+  - Left 4, Top - 2
+  - Top 1, Right - 4 ( - 3without spaces)
+  - Bottom -3, Left - 5 (-3 without spaces)
+-->
+</div>
+<div id="bonus-do-more-classifications" class="section level1"
+number="9">
+<h1><span class="header-section-number">9</span> Bonus: Do more
+classifications</h1>
+<p>Detect cell on whole patches and calculate positive/negative-ly
+stained proportion in each cell-type.</p>
+</div>
+<div id="bonus-test-the-instanseg-automatic-segmenter-on-ki-67-1"
+class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Bonus: Test the
+InstanSeg automatic segmenter on Ki-67</h1>
+<ul>
+<li>InstanSeg is described at <a href="https://arxiv.org/pdf/2408.15954"
+class="uri">https://arxiv.org/pdf/2408.15954</a></li>
+<li>Install InstanSeg
+<ul>
+<li>Open “Extensions -&gt; Manage Extensions”
+<ul>
+<li>Find “QuPath InstanSeg extension v0.1.0-rc1”, click the green plus
+sign to install</li>
+</ul></li>
+<li>Open “Extensions -&gt; Deep Java Library -&gt; Manage DJL Engines”
+<ul>
+<li>Under “PyToch”, click “Check/Download”, once downloaded close the
+window</li>
+</ul></li>
+<li>You should now see “InstanSeg” under “Extensions”
+<ul>
+<li>If you don’t, then restart QuPath (save your changes)</li>
+</ul></li>
+</ul></li>
+<li>Try InstanSeg
+<ul>
+<li>Make a rectangle annotation overlapping your previous detections and
+select it</li>
+<li>Open “Extensions -&gt; InstanSeg -&gt; Run InstanSeg”
+<ul>
+<li>Allow checking for updates</li>
+<li>Click the directory icon near “Choose directory to store models”.
+<ul>
+<li>Choose the directory where you have your other data</li>
+</ul></li>
+<li>Select “brightfield-nuclei” under “Select a model”</li>
+<li>Make sure you have the correct rectangle selected (in yellow
+color)</li>
+<li>Click “Run”</li>
+</ul></li>
+<li>Compare the annotations to the nuclei annotations made manually
+<ul>
+<li>In the left pane, under “Annotations” and “Class list” you can hide
+some annotations — by default the new annotations from InstanSeg will be
+marked as “None” while the annotations done manually are classified as
+“Positive” or “Negative”
+<ul>
+<li>Note that the default InstanSeg model only selects nuclei.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Classify InstanSeg cells as Ki-67 positive
+<ul>
+<li>Delete manually annotated rectangles</li>
+<li>Choose “Classify -&gt; Object Classification -&gt; Set Cell
+Intensity Classification”</li>
+<li>Select “DAB: Mean” as the “Measurement”, pick a suitable
+threshold.</li>
+</ul></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
