@@ -19,8 +19,8 @@ Plán lekcí (přibližný, může se ještě změnit)
 - Lekce 1 - Historie a principy AI: [osnova](history.html)
 - Lekce 2 - Jednoduché metody zpracování obrazu, digitální patologie, jednoduché strojové učení v digitální patologii: [osnova](digital-pathology.html), [úlohy](digital-pathology-tasks.html)
 - Lekce 3 - Neuronové sítě - principy: [osnova](nn_principles.html), [úlohy](nn_principles-tasks.html)
-- Lekce 4 - Neurovnoé sítě v medicínské analýze obrazu
-- Lekce 5 - Z čeho se skládá ChatGPT
+- Lekce 4 - Neuronové sítě v medicínské analýze obrazu: [osnova](nn_medical.html)
+- Lekce 5 - Z čeho se skládá ChatGPT: [osnova](llm1.html), [úlohy](llm1-tasks.html)
 - Lekce 6 - Velké jazykové modely - základní principy a omezení
 - Lekce 7 - Velké jazykové modely - co všechno je bulšit
 - Lekce 8 - Velké jazykové modely - použití ve vědě a výuce

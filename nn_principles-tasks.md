@@ -17,7 +17,7 @@ i exploraci "nadivoko" mimo tato zadání.
 
 ## Single neuron
 
-- Vyzkoušejte na různých vstupních datech, co přesně (jaký druh tvaru) se jeden neuron je schopen naučí?
+- Vyzkoušejte na různých vstupních datech, co přesně (jaký druh tvaru) se jeden neuron je schopen naučit?
 
 ## Two neurons
 
@@ -26,7 +26,7 @@ i exploraci "nadivoko" mimo tato zadání.
 
 ## Four neurons
 
-- Dokážete vy sami generalizovat, jaký druh tvaru se naučí N neuroné v jedné vrstvě?
+- Dokážete vy sami generalizovat, jaký druh tvaru se naučí N neuronů v jedné vrstvě?
 
 ## Více vrstev
 
