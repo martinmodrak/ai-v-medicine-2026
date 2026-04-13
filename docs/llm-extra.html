@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 5 - Building ChatGPT</title>
+<title>llm-extra</title>
 
 <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -257,106 +257,12 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 5 - Building ChatGPT</h1>
 
 </div>
 
 
-<div id="příprava-na-hodinu" class="section level1">
-<h1>Příprava na hodinu</h1>
-<ul>
-<li>Vedle technických detailů nás budou zajímat i více “měkké” aspekty
-této technologie, a pro tyto budeme vycházet z kurzu “Modern day Oracles
-or Bullshit Machines?” od Carla Bergstroma a Jevina Westa.</li>
-<li>Poprosím vás o přečtení úvodu (<a
-href="https://thebullshitmachines.com/"
-class="uri">https://thebullshitmachines.com/</a>) a prvních dvou
-“lekcí”:
-<ul>
-<li><a
-href="https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/"
-class="uri">https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/</a></li>
-<li><a
-href="https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/"
-class="uri">https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/</a></li>
-</ul></li>
-<li>K diskuzi:
-<ul>
-<li>“At first glance, a computer program that can autocomplete seems to
-be completely different from a computer program that holds a
-conversation, answers questions, or takes directions. Why do you think a
-program that simply tries to predict the most likely next word in a
-sequence would be good at these things?”</li>
-<li>“People are perfectly good at producing bullshit without AI
-assistance—but with AI, people can produce more bullshit, faster. Who
-might find that useful? How?”</li>
-</ul></li>
-</ul>
-<div id="reprezentace-slov-jako-čísel" class="section level2">
-<h2>Reprezentace slov jako čísel</h2>
-<ul>
-<li>Tokeny
-<ul>
-<li><a href="llm1-tasks.html">Task 1</a></li>
-</ul></li>
-<li>Word embeddings - a good detailed writeup at <a
-href="https://jalammar.github.io/illustrated-word2vec/"
-class="uri">https://jalammar.github.io/illustrated-word2vec/</a>
-<ul>
-<li><a href="llm1-tasks.html">Task 2</a></li>
-</ul></li>
-<li>Tokeny z word embeddings</li>
-<li>Speciální tokeny (konec zprávy v chatu, obrázky, zvuk, …)</li>
-</ul>
-</div>
-<div id="towards-an-llm" class="section level2">
-<h2>Towards an LLM</h2>
-<ul>
-<li>Review neural networks:
-<ul>
-<li>Modern neural networks move away from biology</li>
-<li>Many layers (deep)</li>
-</ul></li>
-<li>LLM = large language model - why not just call it AI?</li>
-<li>ChatGPT and other major LLMs are based on the transformer
-architecture (though it is unclear what changes were made in the latest
-versions)</li>
-<li>We will roughly follow <a
-href="http://nlp.seas.harvard.edu/annotated-transformer/"
-class="uri">http://nlp.seas.harvard.edu/annotated-transformer/</a> , but
-note that ChatGPT is (as far as we know) just decoders and has no
-encoder element</li>
-<li>Context window</li>
-<li>Positional encoding</li>
-<li>Attention heads
-<ul>
-<li>Allows attention by both meaning (embedding) and position (position
-encoding)</li>
-<li>Cannot attend to future tokens</li>
-</ul></li>
-<li>Beam (or other) search <!--
-   - Příklad: Pes dostal pamlsek, co udělal?
-               ocasem (0.5) - . (0.5) = 0.25
-             /              \ na (0.1) = 0.05
-   Pes vrtěl   
-             \                 / ocasem (0.9) = 0.27
-               přátelsky (0.3) - svým (0.01) = 0.003
---></li>
-</ul>
-<!-- - Discussion:
-   - Some things work pretty well
-   - Framing matters
-   - Following instructions vs. not being a PR disaster
-     - No AI is value free!
-     - Jailbreak prompts
- - Task 3
- - Discussion:
-   - We don't tech humans with large datasets (mostly)
-   - Learning within sessions?
-   - OpenAI papers over most of the obvious failures.
--->
-</div>
-</div>
+<p>Mirage reasoning <a href="https://arxiv.org/pdf/2603.21687"
+class="uri">https://arxiv.org/pdf/2603.21687</a></p>
 
 
 

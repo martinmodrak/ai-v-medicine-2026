@@ -10,7 +10,9 @@ output: html_document
   - https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/
   - https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/
 - K diskuzi:
-  - "At first glance, a computer program that can autocomplete seems to be completely different from a computer program that holds a conversation, answers questions, or takes directions. Why do you think a program that simply tries to predict the most likely next word in a sequence would be good at these things?"
+  - "At first glance, a computer program that can autocomplete seems to be completely different from a computer program that holds a conversation, 
+  answers questions, or takes directions. Why do you think a program that simply tries to predict the most likely next word in a sequence 
+  would be good at these things?"
   - "People are perfectly good at producing bullshit without AI assistance—but with AI, people can produce more bullshit, faster. Who might find that useful? How?"
 
 
@@ -46,15 +48,6 @@ output: html_document
              \                 / ocasem (0.9) = 0.27
                přátelsky (0.3) - svým (0.01) = 0.003
 -->
- - The full transformer
- - [Fine-tuning](https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning))
- - [Reinforcement learning from human feedback](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback)
- - System prompt
-
-## Pracujeme s LLM
-
- - Na co používáte LLM? 
- - Co jim ve vaší vlastní zkušenosti jde dobře a co hůře?
 
 <!-- - Discussion:
    - Some things work pretty well

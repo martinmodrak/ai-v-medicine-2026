@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 5 - Building ChatGPT</title>
+<title>Lesson 6 - Velké jazykové modely</title>
 
 <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -257,7 +257,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 5 - Building ChatGPT</h1>
+<h1 class="title toc-ignore">Lesson 6 - Velké jazykové modely</h1>
 
 </div>
 
@@ -265,83 +265,71 @@ $(document).ready(function () {
 <div id="příprava-na-hodinu" class="section level1">
 <h1>Příprava na hodinu</h1>
 <ul>
-<li>Vedle technických detailů nás budou zajímat i více “měkké” aspekty
-této technologie, a pro tyto budeme vycházet z kurzu “Modern day Oracles
-or Bullshit Machines?” od Carla Bergstroma a Jevina Westa.</li>
-<li>Poprosím vás o přečtení úvodu (<a
-href="https://thebullshitmachines.com/"
-class="uri">https://thebullshitmachines.com/</a>) a prvních dvou
-“lekcí”:
+<li>Poprosím vás o přečtení úvodu dalších “lekcí” z “Modern day:
 <ul>
 <li><a
-href="https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/"
-class="uri">https://thebullshitmachines.com/lesson-1-autocomplete-in-overdrive/</a></li>
+href="https://thebullshitmachines.com/lesson-3-turing-tests-and-bullshit-benchmarks/index.html"
+class="uri">https://thebullshitmachines.com/lesson-3-turing-tests-and-bullshit-benchmarks/index.html</a></li>
 <li><a
-href="https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/"
-class="uri">https://thebullshitmachines.com/lesson-2-the-nature-of-bullshit/</a></li>
+href="https://thebullshitmachines.com/lesson-4-computers-you-can-talk-to/index.html"
+class="uri">https://thebullshitmachines.com/lesson-4-computers-you-can-talk-to/index.html</a></li>
+<li><a
+href="https://thebullshitmachines.com/lesson-5-hard-to-understand-harder-to-fix/index.html"
+class="uri">https://thebullshitmachines.com/lesson-5-hard-to-understand-harder-to-fix/index.html</a></li>
 </ul></li>
 <li>K diskuzi:
 <ul>
-<li>“At first glance, a computer program that can autocomplete seems to
-be completely different from a computer program that holds a
-conversation, answers questions, or takes directions. Why do you think a
-program that simply tries to predict the most likely next word in a
-sequence would be good at these things?”</li>
-<li>“People are perfectly good at producing bullshit without AI
-assistance—but with AI, people can produce more bullshit, faster. Who
-might find that useful? How?”</li>
+<li>“What design features of contemporary LLMs encourage us to view them
+not as mindless machines but rather as agents that can think and perhaps
+even feel?” <!-- Thinking mode, Praise, active mode --></li>
+<li>“Large language models make it possible for us to communicate with
+computers in our natural language instead of learning languages that
+work for them. What does this allow you to do, right now, you couldn’t
+do before? What could it make possible in the relatively near
+future?”</li>
+<li>“We’ve considered the challenge of debugging LLMs. Why else might we
+want to understand why they do what they do?”
+<!-- political influnce, trust, sourcing --></li>
 </ul></li>
 </ul>
-<div id="reprezentace-slov-jako-čísel" class="section level2">
-<h2>Reprezentace slov jako čísel</h2>
+<div id="recap-z-minula" class="section level2">
+<h2>Recap z minula</h2>
 <ul>
-<li>Tokeny
-<ul>
-<li><a href="llm1-tasks.html">Task 1</a></li>
-</ul></li>
-<li>Word embeddings - a good detailed writeup at <a
-href="https://jalammar.github.io/illustrated-word2vec/"
-class="uri">https://jalammar.github.io/illustrated-word2vec/</a>
-<ul>
-<li><a href="llm1-tasks.html">Task 2</a></li>
-</ul></li>
-<li>Tokeny z word embeddings</li>
-<li>Speciální tokeny (konec zprávy v chatu, obrázky, zvuk, …)</li>
+<li>Tokeny, word embeddings, multimodální modely</li>
+<li>Attention + positional encoding jako “konvoluce pro text”</li>
 </ul>
 </div>
-<div id="towards-an-llm" class="section level2">
-<h2>Towards an LLM</h2>
+<div id="dokončení-z-minula---jak-trénujeme-llm" class="section level2">
+<h2>Dokončení z minula - jak trénujeme LLM</h2>
 <ul>
-<li>Review neural networks:
+<li>Předpověď dalšího chybějícího tokenu</li>
+<li><a
+href="https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)">Fine-tuning</a></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback">Reinforcement
+learning from human feedback</a></li>
+<li>System prompt</li>
+</ul>
+</div>
+<div id="něco-z-omezení-llm" class="section level2">
+<h2>Něco z omezení LLM</h2>
 <ul>
-<li>Modern neural networks move away from biology</li>
-<li>Many layers (deep)</li>
+<li>Rychlá úloha (ve dvojicích): Přesvědčte svůj oblíbený LLM, aby
+<ul>
+<li>shrnul neexistující píseň existující skupiny/zpěváka</li>
+<li>shrnul neexistující dílo existujícího autora</li>
 </ul></li>
-<li>LLM = large language model - why not just call it AI?</li>
-<li>ChatGPT and other major LLMs are based on the transformer
-architecture (though it is unclear what changes were made in the latest
-versions)</li>
-<li>We will roughly follow <a
-href="http://nlp.seas.harvard.edu/annotated-transformer/"
-class="uri">http://nlp.seas.harvard.edu/annotated-transformer/</a> , but
-note that ChatGPT is (as far as we know) just decoders and has no
-encoder element</li>
-<li>Context window</li>
-<li>Positional encoding</li>
-<li>Attention heads
+<li>Mirage - příklad živě, viz, <a
+href="https://arxiv.org/pdf/2603.21687"
+class="uri">https://arxiv.org/pdf/2603.21687</a></li>
+</ul>
+</div>
+<div id="diskuze" class="section level2">
+<h2>Diskuze</h2>
 <ul>
-<li>Allows attention by both meaning (embedding) and position (position
-encoding)</li>
-<li>Cannot attend to future tokens</li>
-</ul></li>
-<li>Beam (or other) search <!--
-   - Příklad: Pes dostal pamlsek, co udělal?
-               ocasem (0.5) - . (0.5) = 0.25
-             /              \ na (0.1) = 0.05
-   Pes vrtěl   
-             \                 / ocasem (0.9) = 0.27
-               přátelsky (0.3) - svým (0.01) = 0.003
---></li>
+<li>Na co používáte LLM?</li>
+<li>Co jim ve vaší vlastní zkušenosti jde dobře a co hůře?</li>
+<li>Instrukce uživatele vs. PR, hodnoty</li>
 </ul>
 <!-- - Discussion:
    - Some things work pretty well
