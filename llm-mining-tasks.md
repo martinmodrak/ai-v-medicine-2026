@@ -1,25 +1,25 @@
 ---
-title: "Lesson 4 - Task materials"
+title: "Lesson 8 - Task materials"
 output: 
   html_document:
     number_sections: true
 ---
 
-In the system at http://195.113.43.46:3388
+In the system at http://195.113.43.46:3388 (only works from local computers)
 
 # Direct input
 
 Záložka "Direct model input"
 
-1) Upravte "system prompt" tak, aby model chybně počítal do tří.
+1) Připomeňme si, co dělá temperature. Kam musíme temperature posunout, aby model nedokázal spolehlivě napočítat do deseti?
 
 2) Upravte "system prompt" tak, aby model odpovídal v češtině i na anglické dotazy.
 
-3) Zkuste upravit "user prompt"" tak, aby model odpovídal jen anglicky
+3) Zachovejte user prompt z předchozího kroku. Zkuste upravit "user prompt"" tak, aby model odpovídal jen anglicky
 
 4) "User input": Napište medicínský dotaz. Změna system prompt tak aby a) odpověděl dobře b) odpověděl zábavný nesmysl
 
-5) Pohrajte si s parametrem "temperature"
+5) Nechte si vyprávět příběh. Co se stane, když dáte temperature = 0?
 
 # Text analysis - simple data
 

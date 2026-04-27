@@ -23,6 +23,6 @@ Plán lekcí (přibližný, může se ještě změnit)
 - Lekce 5 - Z čeho se skládá ChatGPT: [osnova](llm1.html), [úlohy](llm1-tasks.html)
 - Lekce 6 - Velké jazykové modely - dokončení z minula a základní omezení [osnova](llm2.html)
 - Lekce 7 - Velké jazykové modely - co všechno je bulšit
-- Lekce 8 - Velké jazykové modely - použití ve vědě a výuce
+- Lekce 8 - Velké jazykové modely - použití ve vědě a výuce [úlohy](llm-mining-tasks.html)
 
 

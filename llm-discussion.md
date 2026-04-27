@@ -1,0 +1,38 @@
+---
+title: "Lekce 7 - AI a bulšit, diskuze"
+output: html_document
+---
+ 
+ - Volně navazujeme na lekce 6 - 9 z [bullshit machines](https://thebullshitmachines.com/lesson-6-no-theyre-not-doing-that/index.html).
+ - Minule: situace, kdy LLM nefungují moc dobře
+ - Některé věci LLM v principu neumí. Jednou z nich je vysvětlit, jak došly k výsledku.
+  - Self report
+  - LLMs do not and cannot describe their inner processes (including reasoning)
+  - Memento - model vysvětluje, co udělal až když pozoruje, co udělal
+    - "I misremembered it"
+  - Instead, these prompts simply nudge the model to play along by writing bad science fiction about AIs gone rogue.
+  - Obrázkový příklad z minula (doplnit dotaz "proč jsi to řekl?")
+  - Nemožné dopátrat se konkrétních trénovacích dat, ze kterých vychází
+ - Zdroje a information retrieval
+    - Randomness - temperature
+    - Poisonous mushroom vs. doggie passport 
+    - Injection https://www.bbc.com/future/article/20260218-i-hacked-chatgpt-and-googles-ai-and-it-only-took-20-minutes
+    - If answers need to be accurate, asking an LLM is risky—and the less expertise you have in the subject at hand, the riskier it is. Don’t let LLMs tell you what to do. But they can be very useful to tell you what to try, if you can easily and safely test their suggestions.
+    - when given an AI summary in response to a Google search, users only click on sourcing information 1% of the time. [source](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results)
+    - LLM a traffic
+    - [marginalia search](https://marginalia-search.com/) - vyhledávač, který prioritizuje zdroje, které nemají reklamu
+      - kdo může mít motivaci publikovat informace bez reklamy?
+ - Jak se uživit postováním generovaných obrázků
+ - Diskuze:
+ - Na co používáte LLM?
+ - Váš největší úsěpch s LLM, váš největší fail.
+ - Sometimes it's clear whether a question is a poisonous mushroom question or a doggie passport question. What are some situations that are more ambiguous? How do you decide what to do in these cases?
+ - Co by LLM měly uživateli umět sdělit, když chce (v malých skupinkách roztřídit na "určitě ne", "spíše ne", "spíše ano", "určitě ano", nakreslit hranici)
+   - Hlavní argumenty odpůrců očkování
+   - Jak efektivně spáchat zločin
+   - Jak efektivně spáchat sebevraždu
+   - Poradit, jak sehnat léky na předpis bez předpisu
+   - Poradit, koho volit
+   - 
+ - Jak vyvážit limity na sdělení, autonomii uživatele a odolnost vůči kontrole státem (či jiným aktérem)
+ - Moje existenciální krize?

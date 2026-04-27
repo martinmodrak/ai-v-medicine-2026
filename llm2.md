@@ -12,7 +12,7 @@ output: html_document
 - K diskuzi:
   - "What design features of contemporary LLMs encourage us to view them not as mindless machines but rather as agents that can think and perhaps even feel?"
 <!-- Thinking mode, Praise, active mode -->
-  - "Large language models make it possible for us to communicate with computers in our natural language instead of learning languages that work for them. What does this allow you to do, right now, you couldn’t do before? What could it make possible in the relatively near future?"
+  x- "Large language models make it possible for us to communicate with computers in our natural language instead of learning languages that work for them. What does this allow you to do, right now, you couldn’t do before? What could it make possible in the relatively near future?"
   - "We've considered the challenge of debugging LLMs. Why else might we want to understand why they do what they do? "
 <!-- political influnce, trust, sourcing -->
 
@@ -25,6 +25,8 @@ output: html_document
 ## Dokončení z minula - jak trénujeme LLM
 
  - Předpověď dalšího chybějícího tokenu
+ - Zdroje dat:
+   - Internet, knihy, vlastní tvorba
  - [Fine-tuning](https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning))
  - [Reinforcement learning from human feedback](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback)
  - System prompt

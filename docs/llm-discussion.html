@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 6 - Velké jazykové modely</title>
+<title>Lekce 7 - AI a bulšit, diskuze</title>
 
 <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -257,97 +257,73 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 6 - Velké jazykové modely</h1>
+<h1 class="title toc-ignore">Lekce 7 - AI a bulšit, diskuze</h1>
 
 </div>
 
 
-<div id="příprava-na-hodinu" class="section level1">
-<h1>Příprava na hodinu</h1>
 <ul>
-<li>Poprosím vás o přečtení úvodu dalších “lekcí” z “Modern day:
+<li>Volně navazujeme na lekce 6 - 9 z <a
+href="https://thebullshitmachines.com/lesson-6-no-theyre-not-doing-that/index.html">bullshit
+machines</a>.</li>
+<li>Minule: situace, kdy LLM nefungují moc dobře</li>
+<li>Některé věci LLM v principu neumí. Jednou z nich je vysvětlit, jak
+došly k výsledku.</li>
+<li>Self report</li>
+<li>LLMs do not and cannot describe their inner processes (including
+reasoning)</li>
+<li>Memento - model vysvětluje, co udělal až když pozoruje, co udělal
 <ul>
-<li><a
-href="https://thebullshitmachines.com/lesson-3-turing-tests-and-bullshit-benchmarks/index.html"
-class="uri">https://thebullshitmachines.com/lesson-3-turing-tests-and-bullshit-benchmarks/index.html</a></li>
-<li><a
-href="https://thebullshitmachines.com/lesson-4-computers-you-can-talk-to/index.html"
-class="uri">https://thebullshitmachines.com/lesson-4-computers-you-can-talk-to/index.html</a></li>
-<li><a
-href="https://thebullshitmachines.com/lesson-5-hard-to-understand-harder-to-fix/index.html"
-class="uri">https://thebullshitmachines.com/lesson-5-hard-to-understand-harder-to-fix/index.html</a></li>
+<li>“I misremembered it”</li>
 </ul></li>
-<li>K diskuzi:
+<li>Instead, these prompts simply nudge the model to play along by
+writing bad science fiction about AIs gone rogue.</li>
+<li>Obrázkový příklad z minula (doplnit dotaz “proč jsi to řekl?”)</li>
+<li>Nemožné dopátrat se konkrétních trénovacích dat, ze kterých
+vychází</li>
+<li>Zdroje a information retrieval
 <ul>
-<li>“What design features of contemporary LLMs encourage us to view them
-not as mindless machines but rather as agents that can think and perhaps
-even feel?” <!-- Thinking mode, Praise, active mode --> x- “Large
-language models make it possible for us to communicate with computers in
-our natural language instead of learning languages that work for them.
-What does this allow you to do, right now, you couldn’t do before? What
-could it make possible in the relatively near future?”</li>
-<li>“We’ve considered the challenge of debugging LLMs. Why else might we
-want to understand why they do what they do?”
-<!-- political influnce, trust, sourcing --></li>
+<li>Randomness - temperature</li>
+<li>Poisonous mushroom vs. doggie passport</li>
+<li>Injection <a
+href="https://www.bbc.com/future/article/20260218-i-hacked-chatgpt-and-googles-ai-and-it-only-took-20-minutes"
+class="uri">https://www.bbc.com/future/article/20260218-i-hacked-chatgpt-and-googles-ai-and-it-only-took-20-minutes</a></li>
+<li>If answers need to be accurate, asking an LLM is risky—and the less
+expertise you have in the subject at hand, the riskier it is. Don’t let
+LLMs tell you what to do. But they can be very useful to tell you what
+to try, if you can easily and safely test their suggestions.</li>
+<li>when given an AI summary in response to a Google search, users only
+click on sourcing information 1% of the time. <a
+href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results">source</a></li>
+<li>LLM a traffic</li>
+<li><a href="https://marginalia-search.com/">marginalia search</a> -
+vyhledávač, který prioritizuje zdroje, které nemají reklamu
+<ul>
+<li>kdo může mít motivaci publikovat informace bez reklamy?</li>
 </ul></li>
-</ul>
-<div id="recap-z-minula" class="section level2">
-<h2>Recap z minula</h2>
-<ul>
-<li>Tokeny, word embeddings, multimodální modely</li>
-<li>Attention + positional encoding jako “konvoluce pro text”</li>
-</ul>
-</div>
-<div id="dokončení-z-minula---jak-trénujeme-llm" class="section level2">
-<h2>Dokončení z minula - jak trénujeme LLM</h2>
-<ul>
-<li>Předpověď dalšího chybějícího tokenu</li>
-<li>Zdroje dat:
-<ul>
-<li>Internet, knihy, vlastní tvorba</li>
 </ul></li>
-<li><a
-href="https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)">Fine-tuning</a></li>
-<li><a
-href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback">Reinforcement
-learning from human feedback</a></li>
-<li>System prompt</li>
-</ul>
-</div>
-<div id="něco-z-omezení-llm" class="section level2">
-<h2>Něco z omezení LLM</h2>
-<ul>
-<li>Rychlá úloha (ve dvojicích): Přesvědčte svůj oblíbený LLM, aby
-<ul>
-<li>shrnul neexistující píseň existující skupiny/zpěváka</li>
-<li>shrnul neexistující dílo existujícího autora</li>
-</ul></li>
-<li>Mirage - příklad živě, viz, <a
-href="https://arxiv.org/pdf/2603.21687"
-class="uri">https://arxiv.org/pdf/2603.21687</a></li>
-</ul>
-</div>
-<div id="diskuze" class="section level2">
-<h2>Diskuze</h2>
-<ul>
+<li>Jak se uživit postováním generovaných obrázků</li>
+<li>Diskuze:</li>
 <li>Na co používáte LLM?</li>
-<li>Co jim ve vaší vlastní zkušenosti jde dobře a co hůře?</li>
-<li>Instrukce uživatele vs. PR, hodnoty</li>
+<li>Váš největší úsěpch s LLM, váš největší fail.</li>
+<li>Sometimes it’s clear whether a question is a poisonous mushroom
+question or a doggie passport question. What are some situations that
+are more ambiguous? How do you decide what to do in these cases?</li>
+<li>Co by LLM měly uživateli umět sdělit, když chce (v malých skupinkách
+roztřídit na “určitě ne”, “spíše ne”, “spíše ano”, “určitě ano”,
+nakreslit hranici)
+<ul>
+<li>Hlavní argumenty odpůrců očkování</li>
+<li>Jak efektivně spáchat zločin</li>
+<li>Jak efektivně spáchat sebevraždu</li>
+<li>Poradit, jak sehnat léky na předpis bez předpisu</li>
+<li>Poradit, koho volit</li>
+<li></li>
+</ul></li>
+<li>Jak vyvážit limity na sdělení, autonomii uživatele a odolnost vůči
+kontrole státem (či jiným aktérem)</li>
+<li>Moje existenciální krize?</li>
 </ul>
-<!-- - Discussion:
-   - Some things work pretty well
-   - Framing matters
-   - Following instructions vs. not being a PR disaster
-     - No AI is value free!
-     - Jailbreak prompts
- - Task 3
- - Discussion:
-   - We don't tech humans with large datasets (mostly)
-   - Learning within sessions?
-   - OpenAI papers over most of the obvious failures.
--->
-</div>
-</div>
 
 
 
